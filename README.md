@@ -10,7 +10,7 @@
   
    Just do some following steps:
    1. Clone source code at http://git.vsii.com/rina/project-lanterns.git
-      - Build war package with maven
-      - Deploy on tomcat/jboss or your application container
-   2. Enjoin 
+      - Build war package with maven **mvn clean install**
+      - Deploy war package to tomcat/jboss or your application container
+   2. Enjoin
       - You can visit link http://localhost:8080/rina to enjoin it.
