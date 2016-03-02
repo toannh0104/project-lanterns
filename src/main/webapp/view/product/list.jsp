@@ -25,7 +25,10 @@
 <table>
     <thead>
         <tr>
-            <th colspan="6" >List of XXX's Products</th>
+            <th colspan="6"><span>Hi: </span> <b>${user} / <a href="/logout">Logout</a></b> </th>
+        </tr>
+        <tr>
+            <th colspan="6" >List of Rina's Products</th>
         </tr>
         <tr class="head">
             <td>ID</td>

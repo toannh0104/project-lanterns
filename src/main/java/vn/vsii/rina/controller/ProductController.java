@@ -16,7 +16,7 @@ import java.util.List;
  */
 @Controller
 @RequestMapping(value = "/product")
-public class ProductController {
+public class ProductController extends BaseController{
 
     @Autowired
     private ProductService productService;
@@ -26,6 +26,7 @@ public class ProductController {
         String viewName = "product.list";
         List<Product> lstProduct = productService.getProducts();
         model.addAttribute("lstProduct", lstProduct);
+        model.addAttribute("user", getPrincipal());
         return viewName;
     }
 }

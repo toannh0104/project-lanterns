@@ -5,14 +5,15 @@ import org.hibernate.validator.constraints.NotBlank;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 import java.io.Serializable;
 import java.util.Date;
-import java.util.List;
 
 /**
  * Created by toannh on 3/1/2016.
  */
 @Entity
+@Table(name = "PRODUCT")
 public class Product implements Serializable{
 
     @Id
@@ -30,7 +31,7 @@ public class Product implements Serializable{
     private long discountPrice;
     private int discountPercent;
     private boolean approved;
-    private List<String> images;
+    private String images;
     private String detail;
     @NotBlank
     private String user;
@@ -132,11 +133,11 @@ public class Product implements Serializable{
         this.approved = approved;
     }
 
-    public List<String> getImages() {
+    public String getImages() {
         return images;
     }
 
-    public void setImages(List<String> images) {
+    public void setImages(String images) {
         this.images = images;
     }
 

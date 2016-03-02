@@ -1,0 +1,14 @@
+INSERT INTO USER_PROFILE(type) VALUES ('USER');
+INSERT INTO USER_PROFILE(type) VALUES ('ADMIN');
+INSERT INTO USER_PROFILE(type) VALUES ('XXX');
+INSERT INTO APP_USER(sso_id, password, first_name, last_name, email, state) VALUES ('toannh','abc123', 'Toan','NH','toannh0401@gmail.com', 'Active');
+INSERT INTO APP_USER(sso_id, password, first_name, last_name, email, state) VALUES ('rina001','abc124', 'Rina 1',' ','rina001@xyz.com', 'Active');
+INSERT INTO APP_USER(sso_id, password, first_name, last_name, email, state) VALUES ('rina002','abc125', 'Rina 2',' ','rina002@xyz.com', 'Active');
+INSERT INTO APP_USER(sso_id, password, first_name, last_name, email, state) VALUES ('rina003','abc126', 'Rina 3',' ','rina003@xyz.com', 'Active');
+INSERT INTO APP_USER(sso_id, password, first_name, last_name, email, state) VALUES ('rina004','abc127', 'Rina 4',' ','rina004@xyz.com', 'Active');
+INSERT INTO APP_USER_USER_PROFILE (user_id, user_profile_id) SELECT user.id, profile.id FROM app_user user, user_profile profile WHERE user.sso_id='toannh' and profile.type='USER';
+INSERT INTO APP_USER_USER_PROFILE (user_id, user_profile_id) SELECT user.id, profile.id FROM app_user user, user_profile profile WHERE user.sso_id='rina001' and profile.type='USER';
+INSERT INTO APP_USER_USER_PROFILE (user_id, user_profile_id) SELECT user.id, profile.id FROM app_user user, user_profile profile WHERE user.sso_id='rina002' and profile.type='ADMIN';
+INSERT INTO APP_USER_USER_PROFILE (user_id, user_profile_id) SELECT user.id, profile.id FROM app_user user, user_profile profile WHERE user.sso_id='rina003' and profile.type='DBA';
+INSERT INTO APP_USER_USER_PROFILE (user_id, user_profile_id) SELECT user.id, profile.id FROM app_user user, user_profile profile WHERE user.sso_id='toannh' and profile.type='ADMIN';
+INSERT INTO APP_USER_USER_PROFILE (user_id, user_profile_id) SELECT user.id, profile.id FROM app_user user, user_profile profile WHERE user.sso_id='rina001' and profile.type='DBA';
