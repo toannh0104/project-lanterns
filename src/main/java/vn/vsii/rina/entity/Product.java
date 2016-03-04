@@ -22,19 +22,13 @@ public class Product implements Serializable{
     @NotBlank
     private String name;
     private int quantity;
-    private int weight;
     @NotBlank
     private Date createTime;
-    private Date updateTime;
-    private long viewCount;
-    private boolean discount;
-    private long discountPrice;
-    private int discountPercent;
-    private boolean approved;
-    private String images;
     private String detail;
     @NotBlank
     private String user;
+
+    public Product(){}
 
     public Product(String id, String name, int quantity, Date createTime, String detail, String user) {
         this.id = id;
@@ -69,76 +63,12 @@ public class Product implements Serializable{
         this.quantity = quantity;
     }
 
-    public int getWeight() {
-        return weight;
-    }
-
-    public void setWeight(int weight) {
-        this.weight = weight;
-    }
-
     public Date getCreateTime() {
         return createTime;
     }
 
     public void setCreateTime(Date createTime) {
         this.createTime = createTime;
-    }
-
-    public Date getUpdateTime() {
-        return updateTime;
-    }
-
-    public void setUpdateTime(Date updateTime) {
-        this.updateTime = updateTime;
-    }
-
-    public long getViewCount() {
-        return viewCount;
-    }
-
-    public void setViewCount(long viewCount) {
-        this.viewCount = viewCount;
-    }
-
-    public boolean isDiscount() {
-        return discount;
-    }
-
-    public void setDiscount(boolean discount) {
-        this.discount = discount;
-    }
-
-    public long getDiscountPrice() {
-        return discountPrice;
-    }
-
-    public void setDiscountPrice(long discountPrice) {
-        this.discountPrice = discountPrice;
-    }
-
-    public int getDiscountPercent() {
-        return discountPercent;
-    }
-
-    public void setDiscountPercent(int discountPercent) {
-        this.discountPercent = discountPercent;
-    }
-
-    public boolean isApproved() {
-        return approved;
-    }
-
-    public void setApproved(boolean approved) {
-        this.approved = approved;
-    }
-
-    public String getImages() {
-        return images;
-    }
-
-    public void setImages(String images) {
-        this.images = images;
     }
 
     public String getDetail() {

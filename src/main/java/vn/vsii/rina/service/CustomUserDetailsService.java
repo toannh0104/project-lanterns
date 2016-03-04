@@ -1,5 +1,6 @@
 package vn.vsii.rina.service;
 
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -10,6 +11,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import vn.vsii.rina.entity.User;
 import vn.vsii.rina.entity.UserProfile;
+import vn.vsii.rina.repository.ProductRepository;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,16 +23,17 @@ import java.util.List;
 @Service("customUserDetailsService")
 public class CustomUserDetailsService implements UserDetailsService {
 
+    private Logger logger = Logger.getLogger(ProductRepository.class.getName());
     @Autowired
     private UserService userService;
 
     @Transactional(readOnly = true)
+    @Override
     public UserDetails loadUserByUsername(String ssoId)
             throws UsernameNotFoundException {
         User user = userService.findBySso(ssoId);
-        System.out.println("User : " + ssoId);
         if (user == null) {
-            System.out.println("User not found");
+            logger.error("Username not found");
             throw new UsernameNotFoundException("Username not found");
         }
         return new org.springframework.security.core.userdetails.User(user.getSsoId(), user.getPassword(),
@@ -39,13 +42,11 @@ public class CustomUserDetailsService implements UserDetailsService {
 
 
     private List<GrantedAuthority> getGrantedAuthorities(User user) {
-        List<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
+        List<GrantedAuthority> authorities = new ArrayList<>();
 
         for (UserProfile userProfile : user.getUserProfiles()) {
-            System.out.println("UserProfile : " + userProfile);
             authorities.add(new SimpleGrantedAuthority("ROLE_" + userProfile.getType()));
         }
-        System.out.print("authorities :" + authorities);
         return authorities;
     }
 

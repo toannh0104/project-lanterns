@@ -2,6 +2,7 @@ package vn.vsii.rina.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import vn.vsii.rina.entity.Product;
 import vn.vsii.rina.repository.ProductRepository;
 
@@ -13,6 +14,7 @@ import java.util.List;
  * ProductServices which provide all services of product
  */
 @Service
+@Transactional
 public class ProductService {
     @Autowired
     private ProductRepository productRepository;

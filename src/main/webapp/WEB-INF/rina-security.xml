@@ -11,7 +11,7 @@
         <form-login  login-page="/login"
                      username-parameter="ssoId"
                      password-parameter="password"
-                     authentication-failure-url="/login" />
+                     authentication-failure-url="/login?error" />
         <csrf/>
     </http>
 

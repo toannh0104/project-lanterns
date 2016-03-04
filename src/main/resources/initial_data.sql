@@ -12,3 +12,10 @@ INSERT INTO APP_USER_USER_PROFILE (user_id, user_profile_id) SELECT user.id, pro
 INSERT INTO APP_USER_USER_PROFILE (user_id, user_profile_id) SELECT user.id, profile.id FROM app_user user, user_profile profile WHERE user.sso_id='rina003' and profile.type='DBA';
 INSERT INTO APP_USER_USER_PROFILE (user_id, user_profile_id) SELECT user.id, profile.id FROM app_user user, user_profile profile WHERE user.sso_id='toannh' and profile.type='ADMIN';
 INSERT INTO APP_USER_USER_PROFILE (user_id, user_profile_id) SELECT user.id, profile.id FROM app_user user, user_profile profile WHERE user.sso_id='rina001' and profile.type='DBA';
+INSERT INTO PRODUCT(id, name, quantity, createTime, detail, user) VALUES('P001', 'product 001', 10, now(), 'detail 001', 'test');
+INSERT INTO PRODUCT(id, name, quantity, createTime, detail, user) VALUES('P002', 'product 002', 10, now(), 'detail 002', 'test');
+INSERT INTO PRODUCT(id, name, quantity, createTime, detail, user) VALUES('P003', 'product 003', 10, now(), 'detail 003', 'test');
+INSERT INTO PRODUCT(id, name, quantity, createTime, detail, user) VALUES('P004', 'product 004', 10, now(), 'detail 004', 'test');
+INSERT INTO PRODUCT(id, name, quantity, createTime, detail, user) VALUES('P005', 'product 005', 10, now(), 'detail 005', 'test');
+INSERT INTO PRODUCT(id, name, quantity, createTime, detail, user) VALUES('P006', 'product 006', 10, now(), 'detail 006', 'test');
+INSERT INTO PRODUCT(id, name, quantity, createTime, detail, user) VALUES('P007', 'product 007', 10, now(), 'detail 007', 'test');
