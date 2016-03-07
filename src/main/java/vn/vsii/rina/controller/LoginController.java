@@ -15,16 +15,26 @@ import javax.servlet.http.HttpServletResponse;
  * Created by toannh on 3/3/2016.
  */
 @Controller
-public class LoginController extends BaseController{
-    @RequestMapping(value = "/login", method = RequestMethod.GET)
-    public String loginPage() {
-        return "login";
+public class LoginController extends BaseController {
+
+    public class A{
     }
 
-    @RequestMapping(value="/logout", method = RequestMethod.GET)
-    public String logoutPage (HttpServletRequest request, HttpServletResponse response) {
+    @RequestMapping(value = "/login", method = RequestMethod.GET)
+    public String loginPage() {
+        String viewName = "login";
+        if (SecurityContextHolder.getContext() != null &&
+                SecurityContextHolder.getContext().getAuthentication() != null &&
+                !SecurityContextHolder.getContext().getAuthentication().getPrincipal().equals("anonymousUser")) {
+            viewName = "redirect:/product/list.html";
+        }
+        return viewName;
+    }
+
+    @RequestMapping(value = "/logout", method = RequestMethod.GET)
+    public String logoutPage(HttpServletRequest request, HttpServletResponse response) {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-        if (auth != null){
+        if (auth != null) {
             new SecurityContextLogoutHandler().logout(request, response, auth);
         }
         return "redirect:/login?logout";

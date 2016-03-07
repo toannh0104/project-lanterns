@@ -16,6 +16,7 @@
             <list>
                 <value>/view/product/tiles.xml</value>
                 <value>/view/user/tiles.xml</value>
+                <value>/view/category/tiles.xml</value>
             </list>
         </property>  
     </bean>

@@ -1,1 +1,1 @@
-<%response.sendRedirect("product/list.html");%>
+<%response.sendRedirect("danh-muc/chi-tiet.html");%>

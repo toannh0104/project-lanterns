@@ -19,7 +19,7 @@
     <bean id="dataSource"
           class="org.springframework.jdbc.datasource.DriverManagerDataSource"
           p:driverClassName="${jdbc.driverClassName}"
-          p:url="${jdbc.url}"
+          p:url="${jdbc.url}?characterEncoding=UTF-8"
           p:username="${jdbc.username}"
           p:password="${jdbc.password}" />
 
@@ -33,7 +33,13 @@
                 <prop key="hibernate.dialect">${hibernate.dialect}</prop>
                 <prop key="hibernate.show_sql">${hibernate.show_sql}</prop>
                 <prop key="hibernate.format_sql">${hibernate.format_sql}</prop>
+                <!--<prop key="hibernate.hbm2ddl.import_files_sql_extractor">vn.vsii.rina.utilities.UnicodeSqlExtractor</prop>-->
                 <prop key="hibernate.hbm2ddl.import_files">initial_data.sql</prop>
+                <prop key="hibernate.connection.characterEncoding">UTF-8</prop>
+                <prop key="hibernate.connection.useUnicode">true</prop>
+                <prop key="hibernate.connection.CharSet">UTF-8</prop>
+                <prop key="hibernate.enable_lazy_load_no_trans">true</prop>
+                <prop key="current_session_context_class">thread</prop>
             </props>
         </property>
     </bean>

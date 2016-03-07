@@ -8,7 +8,8 @@
         <intercept-url pattern="/" access="permitAll" />
         <intercept-url pattern="/home" access="permitAll" />
         <intercept-url pattern="/product/**" access="hasRole('USER')" />
-        <form-login  login-page="/login"
+        <intercept-url pattern="/category/**" access="hasRole('USER')" />
+        <form-login  login-page="/login" default-target-url="/danh-muc/chi-tiet.html"
                      username-parameter="ssoId"
                      password-parameter="password"
                      authentication-failure-url="/login?error" />
