@@ -26,4 +26,8 @@ public class ProductService {
     public List<Product> getProducts(){
         return productRepository.getProducts();
     }
+
+    public Product getProduct(String id){
+        return productRepository.getByKey(id);
+    }
 }

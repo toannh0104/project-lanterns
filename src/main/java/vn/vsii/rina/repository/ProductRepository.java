@@ -10,7 +10,7 @@ import java.util.List;
  * ProductRepository, which work with DBMS to get data
  */
 @Repository
-public class ProductRepository extends AbstractDao<Integer, Product>{
+public class ProductRepository extends AbstractDao<String, Product>{
 
     /**
      * Get all products

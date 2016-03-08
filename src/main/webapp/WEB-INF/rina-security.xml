@@ -5,9 +5,10 @@
     http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-4.0.xsd">
 
     <http auto-config="true" >
-        <intercept-url pattern="/" access="permitAll" />
         <intercept-url pattern="/home" access="permitAll" />
-        <intercept-url pattern="/product/**" access="hasRole('USER')" />
+        <intercept-url pattern="/catalog/*" access="permitAll" />
+        <intercept-url pattern="/product/*" access="permitAll" />
+        <intercept-url pattern="/bo/**" access="hasRole('USER')" />
         <form-login  login-page="/login"
                      username-parameter="ssoId"
                      password-parameter="password"

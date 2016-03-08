@@ -1,12 +1,14 @@
-package vn.vsii.rina.controller;
+package vn.vsii.rina.controller.backoffice;
 
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import vn.vsii.rina.controller.backoffice.BaseController;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -15,7 +17,14 @@ import javax.servlet.http.HttpServletResponse;
  * Created by toannh on 3/3/2016.
  */
 @Controller
-public class LoginController extends BaseController{
+public class LoginController extends BaseController {
+
+    @RequestMapping(value = "/bo", method = RequestMethod.GET)
+    public String dashboard(Model model) {
+        String view = "bo.home";
+        return view;
+    }
+
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public String loginPage() {
         return "login";

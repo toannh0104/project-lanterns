@@ -1,4 +1,4 @@
-package vn.vsii.rina.controller;
+package vn.vsii.rina.controller.backoffice;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -11,22 +11,20 @@ import vn.vsii.rina.service.ProductService;
 import java.util.List;
 
 /**
- * Created by toannh on 2/25/2016.
- * Product controller
+ * Created by haltt on 3/8/2016.
  */
 @Controller
-@RequestMapping(value = "/product")
+@RequestMapping(value = "/bo/product")
 public class ProductController extends BaseController{
 
     @Autowired
     private ProductService productService;
 
-    @RequestMapping(value = "/list", method = RequestMethod.GET)
-    public String index(Model model) {
-        String viewName = "product.list";
+    @RequestMapping(value = "", method = RequestMethod.GET)
+    public String admin(Model model) {
+        String view = "bo.product";
         List<Product> lstProduct = productService.getProducts();
         model.addAttribute("lstProduct", lstProduct);
-        model.addAttribute("user", getPrincipal());
-        return viewName;
+        return view;
     }
 }

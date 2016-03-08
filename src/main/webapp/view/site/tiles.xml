@@ -1,0 +1,31 @@
+<!--?xml version="1.0" encoding="UTF-8"?-->  
+<!DOCTYPE tiles-definitions PUBLIC  
+        "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"  
+        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">  
+        
+<tiles-definitions>
+    <definition name="product.maihoang" template="/view/site/maihoang.jsp" >
+        <put-attribute name="header" value="/view/site/fragments/header.jsp" />
+        <put-attribute name="menu" value="/view/site/fragments/menuleft.jsp" />
+        <put-attribute name="partners" value="/view/site/fragments/partners.jsp" />
+        <put-attribute name="body" value="/view/site/products-list.jsp" />
+        <put-attribute name="footer" value="/view/site/fragments/footer.jsp" />
+    </definition>
+
+    <definition name="product.catalog" template="/view/site/maihoang.jsp" >
+        <put-attribute name="header" value="/view/site/fragments/toggle-header.jsp" />
+        <put-attribute name="menu" value="" />
+        <put-attribute name="partners" value="" />
+        <put-attribute name="body" value="/view/site/products-list.jsp" />
+        <put-attribute name="footer" value="/view/site/fragments/footer.jsp" />
+    </definition>
+
+    <definition name="product.details" template="/view/site/maihoang.jsp" >
+        <put-attribute name="header" value="/view/site/fragments/toggle-header.jsp" />
+        <put-attribute name="menu" value="" />
+        <put-attribute name="partners" value="" />
+        <put-attribute name="body" value="/view/site/product-details.jsp" />
+        <put-attribute name="footer" value="/view/site/fragments/footer.jsp" />
+    </definition>
+
+</tiles-definitions>

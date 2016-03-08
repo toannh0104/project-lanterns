@@ -1,5 +1,6 @@
 package vn.vsii.rina.entity;
 
+import javafx.beans.DefaultProperty;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotBlank;
 
@@ -21,7 +22,12 @@ public class Product implements Serializable{
     @Length(max = 200, message = "Size of product's name is too long")
     @NotBlank
     private String name;
+
+    @NotBlank
+    private double price;
+
     private int quantity;
+
     @NotBlank
     private Date createTime;
     private String detail;
@@ -85,5 +91,13 @@ public class Product implements Serializable{
 
     public void setUser(String user) {
         this.user = user;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
     }
 }

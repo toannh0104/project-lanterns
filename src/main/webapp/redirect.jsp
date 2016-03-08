@@ -1,1 +1,1 @@
-<%response.sendRedirect("product/list.html");%>
+<%response.sendRedirect("/home");%>

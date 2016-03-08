@@ -1,9 +1,4 @@
-
-html{
-	background-color:#2F2F2F;
-}
-
-body, #mainWrapper {
+#mainWrapper {
 	height: 100%;
 	background-image: -webkit-gradient(
 	linear,
@@ -33,6 +28,35 @@ body, #mainWrapper, .form-control{
 	padding-bottom:10px;
 }
 
+/*
+TYPO
+*/
+h2, .h2 {
+	font-size: 30px;
+}
+h1, .h1, h2, .h2, h3, .h3 {
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+	font-family: inherit;
+	font-weight: 500;
+	line-height: 1.1;
+	color: inherit;
+}
+
+.crop-text {
+	width:300px;
+	overflow:hidden;
+	/*display:inline-block;*/
+	white-space:nowrap;
+	text-overflow:ellipsis;
+}
+
+/*
+LOGIN
+*/
+
 .login-container {
     margin-top: 100px;
     background-color: floralwhite;
@@ -47,4 +71,10 @@ body, #mainWrapper, .form-control{
 }
 .login-form {
     padding: 10%;
+}
+
+footer {
+	bottom: 0px;
+	position: fixed;
+	width: 100%;
 }

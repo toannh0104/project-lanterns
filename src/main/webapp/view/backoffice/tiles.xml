@@ -1,0 +1,25 @@
+<!--?xml version="1.0" encoding="UTF-8"?-->  
+<!DOCTYPE tiles-definitions PUBLIC  
+        "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"  
+        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">  
+        
+<tiles-definitions>
+    <definition name="bo.home" template="/view/backoffice/dashboard.jsp" >
+        <put-attribute name="header" value="/view/backoffice/fragments/header.jsp" />
+        <put-attribute name="body" value="/view/backoffice/index.jsp" />
+        <put-attribute name="footer" value="/view/backoffice/fragments/footer.jsp" />
+    </definition>
+
+    <definition name="bo.product" template="/view/backoffice/dashboard.jsp" >
+        <put-attribute name="header" value="/view/backoffice/fragments/header.jsp" />
+        <put-attribute name="body" value="/view/backoffice/products-mgt.jsp" />
+        <put-attribute name="footer" value="/view/backoffice/fragments/footer.jsp" />
+    </definition>
+
+    <definition name="bo.admin" template="/view/backoffice/dashboard.jsp" >
+        <put-attribute name="header" value="/view/backoffice/fragments/header.jsp" />
+        <put-attribute name="body" value="/view/backoffice/admin.jsp" />
+        <put-attribute name="footer" value="/view/backoffice/fragments/footer.jsp" />
+    </definition>
+
+</tiles-definitions>
