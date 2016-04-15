@@ -17,6 +17,7 @@ public class ProductRepository extends AbstractDao<Integer, Product>{
      * @return
      */
     public List<Product> getProducts(){
+        System.out.println("Get list product from repository");
         return getSession().createCriteria(Product.class).list();
     }
 }

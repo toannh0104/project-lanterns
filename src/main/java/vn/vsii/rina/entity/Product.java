@@ -15,6 +15,8 @@ import java.util.Date;
 @Table(name = "product")
 public class Product implements Serializable{
 
+    private static final long serialVersionUID = 4185925796478478204L;
+
     @Id
     private String id;
 

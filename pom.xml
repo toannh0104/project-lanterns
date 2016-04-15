@@ -14,11 +14,13 @@
         <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
         <project.apache.tiles>3.0.5</project.apache.tiles>
         <project.hibernate.validator>5.1.0.Final</project.hibernate.validator>
-        <springframework.version>4.2.5.RELEASE</springframework.version>
+        <springframework.version>4.1.7.RELEASE</springframework.version>
         <springsecurity.version>4.0.1.RELEASE</springsecurity.version>
         <hibernate.version>4.3.6.Final</hibernate.version>
         <mysql.connector.version>5.1.31</mysql.connector.version>
         <project.logging.slf4j>1.7.7</project.logging.slf4j>
+        <springdataredis>1.6.2.RELEASE</springdataredis>
+        <jedis.version>2.5.1</jedis.version>
     </properties>
 
     <repositories>
@@ -31,6 +33,21 @@
 
     <dependencies>
         <!-- Spring -->
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-redis</artifactId>
+            <!--<version>1.0.2.RELEASE</version>-->
+            <version>1.6.0.RELEASE</version>
+        </dependency>
+
+        <!-- Jedis Driver Library -->
+        <dependency>
+            <groupId>redis.clients</groupId>
+            <artifactId>jedis</artifactId>
+            <version>2.7.3</version>
+            <!--<version>2.0.0</version>-->
+        </dependency>
+
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-core</artifactId>

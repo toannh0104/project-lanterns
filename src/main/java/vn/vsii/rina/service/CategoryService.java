@@ -1,6 +1,7 @@
 package vn.vsii.rina.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import vn.vsii.rina.entity.Category;
@@ -22,6 +23,7 @@ public class CategoryService {
         return categoryRepository.getByKey(categoryID);
     }
 
+    @Cacheable(value = "categories")
     public List<Category> getCategories(){
         return categoryRepository.getCategories();
     }
